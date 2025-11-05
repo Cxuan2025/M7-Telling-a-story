@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8o5qo3on08yk"]
+[gd_scene load_steps=11 format=3 uid="uid://b8o5qo3on08yk"]
 
-[ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_758ep"]
+[ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_758ep"]
+[ext_resource type="Script" path="res://dialogue.gd" id="1_df306"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_hoxo3"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_q2h7b"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_hoxo3"]
@@ -10,10 +11,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq77p"]
 shader = ExtResource("1_758ep")
-shader_parameter/pattern_sampler = ExtResource("2_hoxo3")
-shader_parameter/bg_color = Color(0.25405103, 0.8741695, 0.99999994, 1)
-shader_parameter/pattern_color = Color(0.93103456, 0.94107616, 0.48361462, 1)
+shader_parameter/bg_color = Color(0.254051, 0.87417, 1, 1)
+shader_parameter/pattern_color = Color(0.931035, 0.941076, 0.483615, 1)
 shader_parameter/pattern_size = 256.0
+shader_parameter/pattern_sampler = ExtResource("2_hoxo3")
 
 [sub_resource type="Theme" id="Theme_xvgdd"]
 default_font_size = 48
@@ -30,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_df306")
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_iq77p")
@@ -44,11 +46,11 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.514
-anchor_bottom = 0.99700004
+anchor_bottom = 0.997
 offset_left = 3.0
 offset_top = 408.0
 offset_right = -291.88
-offset_bottom = 3.2399902
+offset_bottom = 3.23999
 texture = ExtResource("3_q2h7b")
 expand_mode = 1
 stretch_mode = 5
@@ -85,14 +87,14 @@ fit_content = true
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.89800006
+anchor_left = 0.898
 anchor_top = 0.887
-anchor_right = 0.97900003
+anchor_right = 0.979
 anchor_bottom = 0.98
-offset_left = -0.16015625
-offset_top = 0.039978027
-offset_right = -0.6800537
-offset_bottom = -0.4000244
+offset_left = -0.160156
+offset_top = 0.039978
+offset_right = -0.680054
+offset_bottom = -0.400024
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_xvgdd")
