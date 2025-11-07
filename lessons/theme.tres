@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bgj3kemamdkac"]
+
+[ext_resource type="StyleBox" uid="uid://b6w2lq182ka4i" path="res://lessons/button_black.tres" id="1_x0mji"]
+[ext_resource type="StyleBox" uid="uid://d4mh6vtru72un" path="res://lessons/button_red.tres" id="2_4qs86"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4jgg"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.984444, 9.12559e-05, 0.763964, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[resource]
+default_font_size = 48
+Button/styles/disabled = ExtResource("1_x0mji")
+Button/styles/focus = SubResource("StyleBoxFlat_h4jgg")
+Button/styles/hover = ExtResource("2_4qs86")
+Button/styles/normal = ExtResource("1_x0mji")
+Button/styles/pressed = ExtResource("2_4qs86")
+HBoxContainer/constants/separation = 20
+VBoxContainer/constants/separation = 20
