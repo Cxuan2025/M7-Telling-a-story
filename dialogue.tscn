@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8o5qo3on08yk"]
+[gd_scene load_steps=12 format=3 uid="uid://b8o5qo3on08yk"]
 
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_758ep"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_df306"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://b6w2lq182ka4i" path="res://lessons/button_black.tres" id="5_iq77p"]
 [ext_resource type="Theme" uid="uid://dt2geayaiwfiv" path="res://practices/L6.P1.poetry/assets/practice_exercises_theme.tres" id="5_iqg0b"]
 [ext_resource type="StyleBox" uid="uid://d4mh6vtru72un" path="res://lessons/button_red.tres" id="6_iqg0b"]
+[ext_resource type="AudioStream" uid="uid://bafjgt7eu3x5a" path="res://assets/talking_synth.ogg" id="9_hb6m4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq77p"]
 shader = ExtResource("1_758ep")
@@ -82,6 +83,8 @@ grow_vertical = 2
 theme = ExtResource("5_iqg0b")
 text = "Hellooo"
 fit_content = true
+visible_characters = 2
+visible_ratio = 0.352
 
 [node name="NextButton" type="Button" parent="."]
 unique_name_in_owner = true
@@ -99,3 +102,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_xvgdd")
 text = "Next"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_hb6m4")
