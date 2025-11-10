@@ -78,6 +78,10 @@ func show_text() -> void:
 	# We stop the audio when the text finishes appearing.
 	tween.finished.connect(audio_stream_player.stop)
 	slide_in()
+	next_button.disabled = true
+	tween.finished.connect(func() -> void:
+		next_button.disabled = false
+		)
 
 
 func advance() -> void:

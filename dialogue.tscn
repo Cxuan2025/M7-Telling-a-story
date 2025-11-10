@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcdaaot7sdv0u"]
+[gd_scene load_steps=11 format=3 uid="uid://dcdaaot7sdv0u"]
 
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_758ep"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_df306"]
@@ -14,6 +14,12 @@ shader_parameter/bg_color = Color(0.827535, 0.76723, 0.473531, 1)
 shader_parameter/pattern_color = Color(0.13672, 0.437502, 0.579231, 1)
 shader_parameter/pattern_size = 256.0
 shader_parameter/pattern_sampler = ExtResource("2_hoxo3")
+
+[sub_resource type="InputEventAction" id="InputEventAction_dqk0n"]
+action = &"advance_text"
+
+[sub_resource type="Shortcut" id="Shortcut_8t0ja"]
+events = [SubResource("InputEventAction_dqk0n")]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -90,6 +96,7 @@ offset_right = -22.0
 offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
+shortcut = SubResource("Shortcut_8t0ja")
 text = "Next"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
