@@ -1,27 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8o5qo3on08yk"]
+[gd_scene load_steps=7 format=3 uid="uid://dcdaaot7sdv0u"]
 
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_758ep"]
+[ext_resource type="Theme" uid="uid://bp0tbtftons3q" path="res://lessons/main_theme.tres" id="1_medti"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_hoxo3"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_q2h7b"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_hoxo3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq77p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ekt5"]
 shader = ExtResource("1_758ep")
-shader_parameter/bg_color = Color(0.254051, 0.87417, 1, 1)
-shader_parameter/pattern_color = Color(0.931035, 0.941076, 0.483615, 1)
+shader_parameter/bg_color = Color(0.827535, 0.76723, 0.473531, 1)
+shader_parameter/pattern_color = Color(0.13672, 0.437502, 0.579231, 1)
 shader_parameter/pattern_size = 256.0
 shader_parameter/pattern_sampler = ExtResource("2_hoxo3")
 
-[node name="Expressions" type="Control"]
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_medti")
 
 [node name="Background" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_iq77p")
+material = SubResource("ShaderMaterial_6ekt5")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,11 +33,13 @@ grow_vertical = 2
 
 [node name="Body" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.509
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 3.0
+offset_top = 234.0
+offset_right = 0.719971
+offset_bottom = 2.0
 texture = ExtResource("3_q2h7b")
 expand_mode = 1
 stretch_mode = 5
@@ -51,33 +55,30 @@ texture = ExtResource("4_hoxo3")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 587.0
+offset_right = -206.0
+offset_bottom = -436.0
+text = "Hello World"
+fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="ButtonSophia" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Sophia"
-
-[node name="ButtonPink" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Pink"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="ButtonRegular" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Regular"
-
-[node name="ButtonSad" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Sad"
-
-[node name="ButtonHappy" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Happy"
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -56.0
+offset_right = -22.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next"

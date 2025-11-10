@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfnhsgl1o2uy2"]
+[gd_scene load_steps=9 format=3 uid="uid://bfnhsgl1o2uy2"]
 
 [ext_resource type="Theme" uid="uid://bgj3kemamdkac" path="res://lessons/theme.tres" id="1_7f25i"]
 [ext_resource type="Script" path="res://expression.gd" id="2_8q7qy"]
@@ -13,6 +13,9 @@ shader_parameter/bg_color = Color(0.254051, 0.87417, 1, 1)
 shader_parameter/pattern_color = Color(0.931035, 0.941076, 0.483615, 1)
 shader_parameter/pattern_size = 256.0
 shader_parameter/pattern_sampler = ExtResource("3_ahpqd")
+
+[sub_resource type="Theme" id="Theme_6dlrc"]
+default_font_size = 48
 
 [node name="Expressions" type="Control"]
 layout_mode = 3
@@ -58,11 +61,10 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 35.0
-offset_right = 627.0
-offset_bottom = 255.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
 metadata/_edit_group_ = true
 
 [node name="RowBodies" type="HBoxContainer" parent="VBoxContainer"]
@@ -72,3 +74,31 @@ layout_mode = 2
 [node name="RowExpressions" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.677
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.62
+offset_left = 59.1599
+offset_top = -14.0
+offset_bottom = 7.40002
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_6dlrc")
+text = "Hey"
+
+[node name="NextButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1743.0
+offset_top = 965.0
+offset_right = 1898.0
+offset_bottom = 1065.0
+text = "Next"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
