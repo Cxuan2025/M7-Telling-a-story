@@ -17,7 +17,7 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "What kind of food we are going to make for the food fair",
+		"text": "What kind of food we are going to make for the [wave]food fair[/wave]",
 		"character": bodies["sophia"],
 	},
 	{
@@ -27,7 +27,7 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "I want to make chicken wings! It's easier to make",
+		"text": "I want to make chicken wings! It's [shake]easier to make[/shake]",
 		"character": bodies["sophia"],
 	},
 	{
@@ -37,7 +37,7 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Hehe! Thank you! let's do it",
+		"text": "Hehe! Thank you! let's [tornado freq=3.0][rainbow val=1.0]do it!!![/rainbow][/tornado]",
 		"character": bodies["sophia"],
 	},
 ]
