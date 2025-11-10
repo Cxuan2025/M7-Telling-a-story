@@ -6,29 +6,39 @@ var expressions := {
 	"sad": preload ("res://assets/emotion_sad.png"),
 }
 
+var bodies := {
+	"sophia": preload ("res://assets/sophia.png"),
+	"pink": preload ("res://assets/pink.png")
+}
+
 ## An array of dictionaries. Each dictionary has two properties:
 ## - expression: a [code]Texture[/code] containing an expression
 ## - text: a [code]String[/code] containing the text the character says
 var dialogue_items: Array[Dictionary] = [
 	{
-		"expression": expressions["sad"],
-		"text": "I very hungry",
+		"expression": expressions["regular"],
+		"text": "What kind of food we are going to make for the food fair",
+		"character": bodies["sophia"],
 	},
 	{
-		"expression": expressions["sad"],
-		"text": "But I have to finish my work first",
+		"expression": expressions["happy"],
+		"text": "We should make cake!",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "I want to have steak for my lunch",
+		"text": "I want to make chicken wings! It's easier to make",
+		"character": bodies["sophia"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Finally I finished it!",
+		"text": "That sounds a good idea, I agree with you",
+		"character": bodies["pink"],
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "Hehe! Bye bye~!",
+		"text": "Hehe! Thank you! let's do it",
+		"character": bodies["sophia"],
 	},
 ]
 var current_item_index := 0
@@ -50,12 +60,14 @@ func show_text() -> void:
 	# We retrieve the current dictionary from the array and assign its
 	# properties to the UI elements.
 	var current_item := dialogue_items[current_item_index]
+	
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
+	body.texture = current_item["character"]
 	# We animate the text appearing letter by letter.
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.0
+	var text_appearing_duration: float = current_item["text"].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 
 	# This is where we play the audio. We randomize the audio playback's start
